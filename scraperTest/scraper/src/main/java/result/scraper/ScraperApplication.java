@@ -31,8 +31,8 @@ public class ScraperApplication {
 	@RequestMapping("/data/{num}")
 	public String siteUpload(@RequestParam("num") int socasniKlici){
 		ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
-		executor.setCorePoolSize(3);
-		executor.setMaxPoolSize(3);
+		executor.setCorePoolSize(socasniKlici);
+		executor.setMaxPoolSize(socasniKlici);
 		executor.setQueueCapacity(100);
 		executor.setThreadNamePrefix("userThread-");
 		executor.initialize();
